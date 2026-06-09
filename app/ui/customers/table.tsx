@@ -1,5 +1,6 @@
 import Image from 'next/image';
 //import { lusitana } from '@/app/ui/fonts';
+//${lusitana.className} DENTRO DA CLASSE
 import Search from '@/app/ui/search';
 import {
   CustomersTableType,
