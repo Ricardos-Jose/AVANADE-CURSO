@@ -7,7 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Teste {
-  id   String @id @default(cuid())
-  nome String
+model Invoice {
+  id         String   @id @default(cuid())
+  customerId String   @map("customer_id")
+  amount     Int
+  status     String
+  date       DateTime
+
+  @@map("invoices")
+}
+
+model Customer {
+  id        String @id
+  name      String
+  email     String
+  image_url String
+}
+
+model Revenue {
+  month   String @id
+  revenue Int
+}
+
+model User {
+  id       String @id
+  name     String
+  email    String @unique
+  password String
 }
